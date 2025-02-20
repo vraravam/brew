@@ -82,7 +82,6 @@ module RuboCop
         :launchctl,
         :quit,
         :signal,
-        :login_item,
         :kext,
         :script,
         :pkgutil,

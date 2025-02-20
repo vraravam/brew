@@ -23,7 +23,8 @@ module Cask
                    skip_cask_deps: false, binaries: true, verbose: false,
                    zap: false, require_sha: false, upgrade: false, reinstall: false,
                    installed_as_dependency: false, installed_on_request: true,
-                   quarantine: true, verify_download_integrity: true, quiet: false)
+                   quarantine: true, verify_download_integrity: true, quiet: false,
+                   login_items: false)
       @cask = cask
       @command = command
       @force = force
@@ -40,11 +41,12 @@ module Cask
       @quarantine = quarantine
       @verify_download_integrity = verify_download_integrity
       @quiet = quiet
+      @login_items = login_items
     end
 
     attr_predicate :binaries?, :force?, :adopt?, :skip_cask_deps?, :require_sha?,
                    :reinstall?, :upgrade?, :verbose?, :zap?, :installed_as_dependency?, :installed_on_request?,
-                   :quarantine?, :quiet?
+                   :quarantine?, :quiet?, :login_items?
 
     def self.caveats(cask)
       odebug "Printing caveats"
@@ -270,6 +272,8 @@ on_request: true)
         )
         already_installed_artifacts.unshift(artifact)
       end
+
+      # TODO: should we register the login_items here?
 
       save_config_file
       save_download_sha if @cask.version.latest?
