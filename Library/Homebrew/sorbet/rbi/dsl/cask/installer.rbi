@@ -25,6 +25,9 @@ class Cask::Installer
   def quarantine?; end
 
   sig { returns(T::Boolean) }
+  def login_items?; end
+
+  sig { returns(T::Boolean) }
   def quiet?; end
 
   sig { returns(T::Boolean) }

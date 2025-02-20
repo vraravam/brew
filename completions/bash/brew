@@ -1394,8 +1394,10 @@ _brew_instal() {
       --keep-tmp
       --keyboard-layoutdir
       --language
+      --login-items
       --mdimporterdir
       --no-binaries
+      --no-login-items
       --no-quarantine
       --only-dependencies
       --overwrite
@@ -1458,8 +1460,10 @@ _brew_install() {
       --keep-tmp
       --keyboard-layoutdir
       --language
+      --login-items
       --mdimporterdir
       --no-binaries
+      --no-login-items
       --no-quarantine
       --only-dependencies
       --overwrite
@@ -2110,8 +2114,10 @@ _brew_reinstall() {
       --keep-tmp
       --keyboard-layoutdir
       --language
+      --login-items
       --mdimporterdir
       --no-binaries
+      --no-login-items
       --no-quarantine
       --prefpanedir
       --qlplugindir
@@ -2893,8 +2899,10 @@ _brew_upgrade() {
       --keep-tmp
       --keyboard-layoutdir
       --language
+      --login-items
       --mdimporterdir
       --no-binaries
+      --no-login-items
       --no-quarantine
       --overwrite
       --prefpanedir
