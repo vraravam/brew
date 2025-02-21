@@ -38,6 +38,7 @@ module RuboCop
             :app,
             :pkg,
             :installer,
+            :login_items,
             :binary,
             :manpage,
             :colorpicker,

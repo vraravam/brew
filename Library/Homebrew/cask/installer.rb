@@ -274,6 +274,12 @@ on_request: true)
       end
 
       # TODO: should we register the login_items here?
+      if login_items?
+        cask.login_items.each do |lgi|
+          # TODO: register the login_items here using osascript
+          puts "***** WILL REGISTER login_item: #{lgi}"
+        end
+      end
 
       save_config_file
       save_download_sha if @cask.version.latest?
