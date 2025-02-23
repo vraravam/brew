@@ -310,7 +310,9 @@ module Cask
       def initialize(token, from_json: T.unsafe(nil), path: nil)
         @token = token.sub(%r{^homebrew/(?:homebrew-)?cask/}i, "")
         @sourcefile_path = path || Homebrew::API::Cask.cached_json_file_path
+        puts "------- path: #{@path}"
         @path = path || CaskLoader.default_path(@token)
+        puts "------- path: #{@path}"
         @from_json = from_json
       end
 
@@ -325,6 +327,7 @@ module Cask
           loader:          self,
         }
 
+        puts "------- sourcefile_path: #{@sourcefile_path}"
         json_cask = Homebrew::API.merge_variations(json_cask).deep_symbolize_keys.freeze
 
         cask_options[:tap] = Tap.fetch(json_cask[:tap]) if json_cask[:tap].to_s.include?("/")
