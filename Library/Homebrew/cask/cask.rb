@@ -395,6 +395,7 @@ module Cask
         "languages"               => languages,
         "ruby_source_path"        => ruby_source_path,
         "ruby_source_checksum"    => ruby_source_checksum,
+        "login_items"             => login_items,
       }
     end
 
