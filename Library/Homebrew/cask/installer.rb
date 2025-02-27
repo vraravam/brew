@@ -29,7 +29,8 @@ module Cask
                    skip_cask_deps: false, binaries: true, verbose: false,
                    zap: false, require_sha: false, upgrade: false, reinstall: false,
                    installed_as_dependency: false, installed_on_request: true,
-                   quarantine: true, verify_download_integrity: true, quiet: false)
+                   quarantine: true, verify_download_integrity: true, quiet: false,
+                   login_items: false)
       @cask = cask
       @command = command
       @force = force
@@ -46,6 +47,7 @@ module Cask
       @quarantine = quarantine
       @verify_download_integrity = verify_download_integrity
       @quiet = quiet
+      @login_items = login_items
     end
 
     sig { returns(T::Boolean) }
@@ -62,6 +64,9 @@ module Cask
 
     sig { returns(T::Boolean) }
     def installed_on_request? = @installed_on_request
+
+    sig { returns(T::Boolean) }
+    def login_items? = @login_items
 
     sig { returns(T::Boolean) }
     def quarantine? = @quarantine
@@ -310,6 +315,14 @@ on_request: true)
           force: force?, predecessor:
         )
         already_installed_artifacts.unshift(artifact)
+      end
+
+      # TODO: should we register the login_items here?
+      if login_items?
+        cask.login_items.each do |lgi|
+          # TODO: register the login_items here using osascript
+          puts "***** WILL REGISTER login_item: #{lgi}"
+        end
       end
 
       save_config_file

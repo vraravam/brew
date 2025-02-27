@@ -678,6 +678,10 @@ upgrade *`formula`* if it is already installed but outdated.
 
 : Delete files that already exist in the prefix while linking.
 
+`--[no-]login-items`
+
+: Disable/enable registering of login item(s) (default: disabled).
+
 `--cask`
 
 : Treat all named arguments as casks.
@@ -1429,6 +1433,10 @@ for the upgraded formulae or, every 30 days, for all formulae.
 `--overwrite`
 
 : Delete files that already exist in the prefix while linking.
+
+`--[no-]login-items`
+
+: Disable/enable registering of login item(s) (default: disabled).
 
 `--cask`
 
