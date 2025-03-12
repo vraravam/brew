@@ -683,6 +683,10 @@ upgrade *`formula`* if it is already installed but outdated.
 : Ask for confirmation before downloading and installing formulae. Print bottles
   and dependencies download size and install size.
 
+`--[no-]login-items`
+
+: Disable/enable registering of login item(s) (default: disabled).
+
 `--cask`
 
 : Treat all named arguments as casks.
@@ -1516,6 +1520,10 @@ for the upgraded formulae or, every 30 days, for all formulae.
 
 : Ask for confirmation before downloading and upgrading formulae. Print bottles
   and dependencies download size, install and net install size.
+
+`--[no-]login-items`
+
+: Disable/enable registering of login item(s) (default: disabled).
 
 `--cask`
 

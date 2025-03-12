@@ -6,9 +6,9 @@ cask "with-installable" do
   homepage "https://brew.sh/fancy-pkg"
 
   pkg "MyFancyPkg/Fancy.pkg"
+  login_items "Fancy"
 
   uninstall quit:       "my.fancy.package.app",
-            login_item: "Fancy",
             script:     { executable: "MyFancyPkg/FancyUninstaller.tool", args: ["--please"] },
             delete:     [
               "#{TEST_TMPDIR}/absolute_path",

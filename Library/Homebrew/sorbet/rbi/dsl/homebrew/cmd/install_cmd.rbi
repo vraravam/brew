@@ -141,6 +141,9 @@ class Homebrew::Cmd::InstallCmd::Args < Homebrew::CLI::Args
   def quarantine?; end
 
   sig { returns(T::Boolean) }
+  def login_items?; end
+
+  sig { returns(T::Boolean) }
   def require_sha?; end
 
   sig { returns(T::Boolean) }
