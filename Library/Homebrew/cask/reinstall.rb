@@ -17,7 +17,8 @@ module Cask
       binaries: false,
       require_sha: false,
       quarantine: false,
-      zap: false
+      zap: false,
+      login_items: false
     )
       require "cask/installer"
 
@@ -25,7 +26,7 @@ module Cask
 
       casks.each do |cask|
         Installer
-          .new(cask, binaries:, verbose:, force:, skip_cask_deps:, require_sha:, reinstall: true, quarantine:, zap:)
+          .new(cask, binaries:, verbose:, force:, skip_cask_deps:, require_sha:, reinstall: true, quarantine:, zap:, login_items:)
           .install
       end
     end
