@@ -27,6 +27,7 @@ module Cask
       language = language_info(cask)
       output << language if language
       output << "#{artifact_info(cask)}\n"
+      output << "#{login_items_info(cask)}\n"
       caveats = Installer.caveats(cask)
       output << caveats if caveats
       output
@@ -131,6 +132,13 @@ module Cask
         artifact_output << "\n" << artifact.to_s
       end
       artifact_output.freeze
+    end
+
+    sig { params(cask: Cask).returns(String) }
+    def self.login_items_info(cask)
+      login_item_output = ohai_title("Login Items").dup
+      login_item_output << "\n" << Array(cask.login_items).join("\n")
+      login_item_output.freeze
     end
   end
 end
